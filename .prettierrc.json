@@ -1,4 +1,5 @@
 {
   "semi": true,
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "printWidth": 300
 }
