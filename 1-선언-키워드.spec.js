@@ -14,9 +14,7 @@ if (STUDENT) {
 }
 
 if (REFERENCE) {
-  const { declarationLet, declarationConst } = await import(
-    "./1-선언-키워드.reference"
-  );
+  const { declarationLet, declarationConst } = await import("./1-선언-키워드.reference");
   test("declarationLet", () => {
     expect(declarationLet()).toBe("머리부터 발끝까지 다 사랑스러워");
   });

@@ -169,3 +169,91 @@ console.log(newPriceOmittedApple.price); // 5000
  * spread syntax의 순서에 따라서 결과가 많이 달라지니 주의할 것!
  *
  */
+
+/**
+ * `npm run test:student`를 입력하고, 테스트를 모두 통과하세요
+ *
+ *
+ *
+ */
+const countries = Object.freeze([
+  {
+    name: "대한민국",
+    code: "KR",
+    capital: {
+      name: "서울",
+      population: 9776000,
+    },
+  },
+  {
+    name: "미국",
+    code: "US",
+    capital: {
+      name: "워싱턴 D.C.",
+      population: 705749,
+    },
+  },
+  {
+    name: "일본",
+    code: "JP",
+    capital: {
+      name: "도쿄",
+      population: 13929286,
+    },
+  },
+  {
+    name: "프랑스",
+    code: "FR",
+    capital: {
+      name: "파리",
+      population: 2161000,
+    },
+  },
+  {
+    name: "호주",
+    code: "AU",
+    capital: {
+      name: "캔버라",
+      population: 426704,
+    },
+  },
+]);
+
+/**
+ * getiPhone
+ * 지정된 시리즈에 기반한 iPhone 모델의 이름을 반환합니다.
+ * 시리즈가 지정되지 않은 경우 기본값으로 "15 Pro"를 사용합니다.
+ *
+ * @param {string} 반환할 iPhone 시리즈.
+ * @returns {string} iPhone 모델을 나타내는 문자열을 반환합니다. ex) "iPhone 15 Pro", "iPhone 4S"
+ *
+ */
+export function getiPhone(series = "15 Pro") {
+  return "iPhone " + series;
+}
+
+/**
+ * addAsMuchAsYouWant
+ * 주어진 모든 인자들의 합을 계산하여 반환합니다.
+ * 인자의 개수에 제한이 없으며, 하나도 주어지지 않은 경우 0을 반환합니다.
+ *
+ * @param {...number} rest - 더할 숫자들. 개수에 제한이 없습니다.
+ * @returns {number} 주어진 숫자들의 합계를 반환합니다.
+ */
+export function addAsMuchAsYouWant(...rest) {
+  // TODO
+}
+
+/**
+ * addNewCapitalInfo
+ * 주어진 나라 객체에 새로운 수도 정보를 추가하거나 기존의 수도 정보를 업데이트합니다.
+ * 이 함수는 나라 객체와 새로운 수도 정보 객체를 매개변수로 받아, 업데이트된 나라 객체를 반환합니다.
+ * 새로운 수도 정보 객체는 기존 수도 정보를 덮어쓸 수 있습니다.
+ *
+ * @param {Object} country - 나라 정보를 담고 있는 객체. 이 객체는 최소한 `name`과 `code` 프로퍼티를 가져야 합니다.
+ * @param {Object} newCapital - 새로운 수도 정보를 담고 있는 객체. 이 객체는 `name`과 `population` 프로퍼티를 포함할 수 있습니다.
+ * @returns {Object} 업데이트된 나라 객체를 반환합니다. 이 객체는 새로운 수도 정보가 반영된 `capital` 프로퍼티를 포함합니다.
+ */
+export function addNewCapitalInfo(country, newCapital) {
+  // TODO
+}

@@ -36,3 +36,22 @@ const evens = numbers.filter(isEven); // [2, 4, 6, 8, 10]
  * https://ko.javascript.info/arrow-functions-basics
  *
  */
+
+/**
+ * 아래 함수를 화살표 함수로 바꾸세요.
+ * - 함수 이름은 변경하지 마세요.
+ * - export const testFuncs는 변경하지 마세요.
+ */
+
+function addNumbers(num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+
+function concatStrings(str1, str2, str3) {
+  return str1.concat(str2).concat(str3);
+}
+
+export const testFuncs = {
+  addNumbers,
+  concatStrings,
+};
