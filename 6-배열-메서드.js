@@ -90,3 +90,114 @@ console.log(badFruitsPriceMoreThan5000); // [{"name":"체리","color":"빨강","
 
 // GOOD 🙆
 let goodFruitsPriceMoreThan5000 = fruits.filter((fruit) => fruit.price > 5000); // [{"name":"체리","color":"빨강","price":12000},{"name":"딸기","color":"빨강","price":9000}]
+
+/**
+ * TL;DR
+ *
+ * non-mutator 배열 메서드는 기존 배열을 수정하지 않기 때문에 불변성을 지켜서 사이드 이펙트를 최소화한다.
+ * 전달하는 callback 함수 역시 순수 함수로 작성을 해줘야, non-mutator 배열 메서드를 쓰는 의미가 있다.
+ *
+ */
+
+const countries = [
+  {
+    name: "영국",
+    code: "GB",
+    capital: {
+      name: "런던",
+      population: 8982000,
+    },
+  },
+  {
+    name: "독일",
+    code: "DE",
+    capital: {
+      name: "베를린",
+      population: 3748148,
+    },
+  },
+  {
+    name: "캐나다",
+    code: "CA",
+    capital: {
+      name: "오타와",
+      population: 994837,
+    },
+  },
+  {
+    name: "브라질",
+    code: "BR",
+    capital: {
+      name: "브라질리아",
+      population: 3015268,
+    },
+  },
+  {
+    name: "인도",
+    code: "IN",
+    capital: {
+      name: "뉴델리",
+      population: 25780396,
+    },
+  },
+];
+
+/**
+ * isIndia
+ * 주어진 국가가 인도인지 여부를 판별합니다.
+ * @param {Object} country - 국가 객체. `name`과 `code` 속성을 포함해야 합니다.
+ * @returns {boolean} 국가 코드가 "IN"이면 true, 그렇지 않으면 false를 반환합니다.
+ */
+export const isIndia = (country) => {
+  // TODO
+};
+
+export const india = countries.find(isIndia);
+
+/**
+ * populationMoreThan1M
+ * 주어진 국가의 수도 인구가 100만 명을 초과하는지 여부를 판별합니다.
+ * @param {Object} country - 국가 객체. 국가의 `capital` 객체는 `population` 속성을 포함해야 합니다.
+ * @returns {boolean} 수도 인구가 100만 명을 초과하면 true, 그렇지 않으면 false를 반환합니다.
+ */
+export const populationMoreThan1M = (country) => {
+  // TODO
+};
+
+export const countriesCapitalMoreThan1M = countries.filter(populationMoreThan1M);
+
+/**
+ * 주어진 숫자보다 큰 수도 인구를 가진 국가를 필터링하기 위한 함수를 생성합니다.
+ * @param {number} num - 비교 기준이 되는 인구 수.
+ * @returns {Function} 주어진 `num`보다 큰 수도 인구를 가진 국가를 판별하는 함수.
+ */
+export const populationMoreThan = (num) => {
+  return function (country) {
+    // TODO
+  };
+};
+
+export const countriesCapitalMoreThan2M = countries.filter(populationMoreThan(5000000));
+
+/**
+ * 국가 객체의 이름을 반환합니다.
+ * @param {Object} country - 국가 객체. `name` 속성을 포함해야 합니다.
+ * @returns {string} 국가의 이름.
+ */
+export const getCountriesName = (country) => {
+  // TODO
+};
+export const countriesNames = countries.map(getCountriesName);
+
+/**
+ * 이전 합계에 현재 국가의 수도 인구를 더합니다.
+ * 이 함수는 주로 배열의 `reduce` 메소드와 함께 사용되어, 모든 국가의 수도 인구의 총합을 계산하는 데 사용됩니다.
+ * @param {number} sum - 이전까지의 수도 인구 합계.
+ * @param {Object} country - 현재 처리 중인 국가 객체. 국가의 `capital` 객체는 `population` 속성을 포함해야 합니다.
+ * @returns {number} 새로운 합계값. 현재 국가의 수도 인구가 이전 합계에 더해진 값입니다.
+ */
+export const sumCapitalPopulation = (sum, country) => {
+  return sum + country.capital.population;
+};
+
+export const capitalsPopulation = countries.reduce(sumCapitalPopulation);

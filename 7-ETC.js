@@ -6,3 +6,18 @@
 const lyrics = ["너만 원해", "내가 전해"];
 const justString = "Hype boy" + " " + lyrics[0] + " " + "Hype boy" + " " + lyrics[1];
 const templateLiteralString = `Hype boy ${lyrics[0]} Hype boy ${lyrics[1]}`;
+
+// for ~ of 문
+// 배열의 index를 이용하지 않아도 된다.
+
+// ES5
+let ES5Words = "helloWorld";
+for (let i = 0; i < ES5Words.length; i++) {
+  console.log(`글자: ${ES5Words[i]}`);
+}
+
+// ES6
+let ES6Words = "helloWorld";
+for (const char of ES6Words) {
+  console.log(`글자: ${char}`);
+}
